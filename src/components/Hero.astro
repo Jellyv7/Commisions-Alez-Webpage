@@ -1,0 +1,94 @@
+---
+---
+
+<section>
+	<img src="../../public/ProfilePhoto.webp" alt="Profile Photo">
+	<div>
+		<div class="title">
+			<h1>
+				Alezsii
+			</h1>
+			<h2>
+				Digital Artist - Illustrator Student
+			</h2>
+		</div>
+		<div class="summary">
+			<span>
+				Hi, I'm Alez, at your service! 🤎
+			</span>
+			<span>
+				22 - He/They - ENG/ESP
+			</span>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2em;
+		gap: 2em;
+	}
+
+	img {
+		width: 450px;
+		margin-top: 50px;
+		border-radius: 50%;
+		border: var(--border-weight) var(--background-950) solid;
+		aspect-ratio: 1 / 1;
+	}
+
+	section > div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		gap: 1em;
+	}
+
+	section > div > div.title {
+		display: flex;
+		flex-direction: column;
+	}
+
+	section > div > div.title > h1 {
+		font-size: 4rem;
+		color: var(--background-100);
+	}
+
+	section > div > div.title > h2 {
+		font-size: 0.7em;
+		color: var(--background-950);
+	}
+
+	section > div > div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	section > div > div > span {
+		font-size: 1.2rem;
+	}
+
+	.summary {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background-color: var(--background-100);
+		border: var(--border-weight) var(--background-950) solid;
+		border-radius: var(--border-radius);
+		width: 100%;
+		padding: 3em;
+		font-size: 0.5rem;
+		gap: 5em;
+		color: var(--background-950);
+		text-align: center;
+	}
+
+</style>

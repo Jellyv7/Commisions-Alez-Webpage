@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Examples from '../components/Examples.astro';
+---
+
+<Layout title="Alez Commisions">
+	<main>
+		<Hero />
+		<div>
+			<div class="info">
+				<SocialMedia />
+				<AboutMe />
+			</div>
+			<Examples />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+	}
+
+	div {
+		display: flex;
+	}
+
+	div > .info {
+		display: flex;
+		flex-direction: column;
+	}
+</style>

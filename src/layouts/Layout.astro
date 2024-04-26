@@ -1,0 +1,129 @@
+---
+interface Props {
+	title: string;
+}
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro'
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="card">
+			<Navbar />
+			<div class="content">
+				<slot/>
+				<Footer />
+			</div>
+			<span class="watermark"><a href="https://github.com/Jellyv7" target="_blank">Made by Jelly.flac with love <3</a></span>
+		</div>
+	</body>
+</html>
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		min-width: 0;
+		user-select: none;
+		scroll-behavior: smooth;
+		overscroll-behavior: contain;
+		text-decoration: none;
+		list-style: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	:root {
+		--background-50: #f9f6ed;
+		--background-100: #f1e7d0;
+		--background-200: #e4cfa4;
+		--background-300: #d4af70;
+		--background-400: #c69349;
+		--background-500: #c69349;
+		--background-600: #9d6431;
+		--background-700: #7e4b2a;
+		--background-800: #6a3e29;
+		--background-900: #5b3528;
+		--background-950: #341b14;
+		--border-radius: 20px;
+		--border-weight: 5px;
+	}
+
+	*:link, *:visited {
+		color: inherit;
+	}
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	img, video, svg {
+		display: block;
+		height: auto;
+		max-width: 100%;
+	}
+
+	html {
+  		font-family: "Potta One", system-ui;
+		background-color: white;
+		letter-spacing: -0.025rem;
+	}
+
+	body {
+		display: flex;
+		justify-content: center;
+		min-height: 100dvh;
+		margin: 2em;
+		letter-spacing: 1px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		text-wrap: balance;
+	}
+
+	.card {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 70%;
+		background-color: #F1E7D0;
+		border-radius: 20px;
+		border: 2px var(--background-900) solid;
+	}
+	
+	.content {
+		margin-top: 1em;
+		background-size: 100% 100%;
+		background-position: 0px 0px;
+		background-image: linear-gradient(0deg, var(--background-900) 0%, var(--background-500) 100%);
+		width: 80%;
+		margin-bottom: 8em;
+	}
+	
+	.watermark {
+		padding: 0.5em;
+		font-size: 0.6rem;
+		opacity: 0.6;
+		color: #6a3e29;
+	}
+
+	.watermark:hover {
+		text-decoration: underline;
+	}
+</style>
+

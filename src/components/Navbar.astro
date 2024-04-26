@@ -1,0 +1,82 @@
+---
+import {Home, Commisions, Portfolio, Terms} from '@icons';
+---
+
+<nav>
+	<ul>
+		<li>
+			<a href="/">
+				<span>
+					Homepage
+				</span>
+				<Home />
+			</a>
+		</li>
+		<li>
+			<a>
+				<span>
+					Commisions
+				</span>
+				<Commisions />
+			</a>
+		</li>
+		<li>
+			<a>
+				<span>
+					Portfolio
+				</span>
+				<Portfolio />
+			</a>
+		</li>
+		<li>
+			<a>
+				<span>
+					T.O.S
+				</span>
+				<Terms />
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 6em;
+		padding: 0.3em 1em;
+		background-color: var(--background-500);
+		width: 80%;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+	}
+
+	li > a {
+		display: flex;
+		justify-content: space-between;
+		min-width: 10em;
+		padding: 1em;
+		background-color: var(--background-100);
+		border-radius: var(--border-radius);
+		border: 1px transparent solid;
+		color: var(--background-950);
+		gap: 0.5em;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+	}
+
+	li > a:hover {
+		background-color: var(--background-700);
+		border: 1px var(--background-100) solid;
+		color: var(--background-100);
+		transition: all 0.3s ease;
+	}
+</style>

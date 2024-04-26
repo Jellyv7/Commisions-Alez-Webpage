@@ -1,0 +1,21 @@
+---
+import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
+---
+<div>
+	<Navbar />
+	<slot/>
+	<Footer />
+</div>
+
+<style>
+	div {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 70%;
+		background-color: #F1E7D0;
+		border-radius: 20px;
+		border: 2px var(--background-900) solid;
+	}
+</style>
