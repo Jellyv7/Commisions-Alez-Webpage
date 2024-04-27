@@ -1,0 +1,54 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import Prices from "src/components/Prices.astro";
+import { example1, example2, example3, example4, example5, example6 } from "../assets/index.js";
+
+const comms = [
+	{
+		title: 'Bust',
+		images: [
+			example1, example2, example3
+		],
+		prices: [
+			10, 20, 35
+		],
+		extraCharacterPrice: 10,
+		maxExtraCharacters: 4,
+		fastDelivery: 20
+	},
+	{
+		title: 'Half Body',
+		images: [
+			example3, example4, example5
+		],
+		prices: [
+			20, 35, 60
+		],
+		extraCharacterPrice: 40,
+		maxExtraCharacters: 4,
+		fastDelivery: 20
+	},
+	{
+		title: 'Full Body',
+		images: [
+			example6, example4, example5
+		],
+		prices: [
+			30, 50, 75
+		],
+		extraCharacterPrice: 40,
+		maxExtraCharacters: 4,
+		fastDelivery: 20
+	}
+]
+---
+
+<Layout title="Commisions">
+	{
+		comms.map(comm => <Prices comm={comm}/>)
+	}
+	<div>
+		<a href="#">TERMS AND CONDITIONS</a>
+	</div>
+
+</Layout>

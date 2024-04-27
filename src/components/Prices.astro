@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+const { comm } = Astro.props;
+const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDelivery } = comm;
+---
+
+<section>
+	<header>
+		<h1>{title}</h1>
+	</header>
+	<div class="images">
+		<Image src={images[0]} alt="Commision Example Image"/>
+		<Image src={images[1]} alt="Commision Example Image"/>
+		<Image src={images[2]} alt="Commision Example Image"/>
+	</div>
+	<div class="prices">
+		<div>
+			<span>Sketch</span>
+			<span>{prices[0]}$</span>
+		</div>
+		<div>
+			<span>Black and White</span>
+			<span>{prices[1]}$</span>
+		</div>
+		<div>
+			<span>Full Color</span>
+			<span>{prices[2]}$</span>
+		</div>
+	</div>
+	<footer>
+		<span>
+			+{extraCharacterPrice}% extra characters <em>(Max {maxExtraCharacters})</em>
+		</span>
+		<span>
+			+{fastDelivery}% fast delivery
+		</span>
+	</footer>
+</section>
+
+<style>
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 1.5em;
+	}
+
+	header {
+		margin-top: 2em;
+		color: var(--background-100);
+		text-transform: uppercase;
+		font-size: 1.3rem;
+	}
+	
+	.images {
+		display: flex;
+		width: 85%;
+	}
+
+	.prices {
+		display: flex;
+		gap: 6em;
+		color: var(--background-100);
+	}
+
+	.prices > div {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	em {
+		color: var(--background-300);
+	}
+
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background-color: var(--background-950);
+		width: 85%;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
+		color: var(--background-100);
+		font-size: 1.2rem;
+		margin-top: unset;
+	}
+</style>

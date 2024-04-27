@@ -3,7 +3,8 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@icons": [ "src/components/icons/index" ]
+            "@icons": [ "src/components/icons/index" ],
+			"@pages": [ "src/pages/*"]
         }
     }
 }

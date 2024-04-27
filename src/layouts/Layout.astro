@@ -24,12 +24,18 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="card">
-			<Navbar />
-			<div class="content">
-				<slot/>
-				<Footer />
-			</div>
-			<span class="watermark"><a href="https://github.com/Jellyv7" target="_blank">Made by Jelly.flac with love <3</a></span>
+			<main>
+				<header>
+					<Navbar />
+				</header>
+				<div class="content">
+					<slot/>
+					<footer>
+						<Footer />
+					</footer>
+				</div>
+				<span class="watermark"><a href="https://github.com/Jellyv7" target="_blank" title="Visit dev GitHub!">Made by Jelly.flac with love <3</a></span>
+			</main>
 		</div>
 	</body>
 </html>
@@ -92,6 +98,20 @@ const { title } = Astro.props;
 		letter-spacing: 1px;
 	}
 
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	main {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		text-wrap: balance;
 	}
@@ -124,6 +144,14 @@ const { title } = Astro.props;
 
 	.watermark:hover {
 		text-decoration: underline;
+	}
+
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 3em;
+		margin-bottom: 1em;	
 	}
 </style>
 
