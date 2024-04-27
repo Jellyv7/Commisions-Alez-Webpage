@@ -55,7 +55,7 @@ import { Instagram, Discord, Twitter, YouTube, Kofi } from '@icons';
 		gap: 0.5em;
 	}
 
-	li {
+	li > a {
 		display: flex;
 		padding: 0.6em;
 		background-color: var(--background-200);
@@ -65,10 +65,10 @@ import { Instagram, Discord, Twitter, YouTube, Kofi } from '@icons';
 		transition: all 0.3s ease;
 	}
 
-	li:hover {
+	li > a:hover {
 		background-color: var(--background-700);
 		border: 1px var(--background-100) solid;
 		color: var(--background-100);
-		transition: all 0.3s ease;
+		scale: 1.1;
 	}
 </style>
