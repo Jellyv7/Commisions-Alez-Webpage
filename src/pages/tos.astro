@@ -1,0 +1,72 @@
+---
+import Layout from "src/layouts/Layout.astro";
+const terms = [
+	'Payment is made via an invoice on PayPal.',
+	'Work on the commission begins once payment is completed (or 50% of it).',
+	'Refunds are not allowed once work on the commission has started, unless unforeseen circumstances prevent its completion.',
+	' The price may be subject to change depending on the complexity of the order.',
+	' If the work to be done is only a sketch, payment must be made in full after all details have been discussed with the client.'
+]
+const detailsAndUse = [
+	'I reserve the copyright. My watermark cannot be removed, nor can the artwork be resold.',
+	'I reserve the right to refuse if I am not comfortable with the commission or if I consider my skill insufficient to complete it.',
+	'I do not provide specific delivery dates; I work on a first-come, first-served basis. If you need the commission by a specific date, please let me know.',
+	'You may share the commission on social media with proper credits.',
+	'The commission will be delivered via email, only in PNG or JPEG formats at their original size. If you require the editable file, there will be an additional cost.',
+	'Please provide multiple visual references for the pose, expression, and a brief description of the character’s personality (especially for original characters).',
+	'You can request necessary revisions during the sketching process. Once the final sketch is approved, no further changes are allowed.'
+]
+---
+
+<Layout title="Terms and Conditions">
+	<section>
+		<h2>Terms and Conditions</h2>
+		<ul>
+			{
+				terms.map(term => {
+					return (
+						<li>{term}</li>
+					)
+				})
+			}
+		</ul>
+	</section>
+	<section>
+		<h2>Details of Use and Requirements</h2>
+		<ul>
+			{
+				detailsAndUse.map(details => {
+					return (
+						<li>{details}</li>
+					)
+				})
+			}
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin: 2em;
+	}
+
+	ul {
+		padding: 1em;
+		color: var(--background-100);
+		background-color: var(--background-950);
+		border-radius: 20px;
+	}
+
+	li {
+		list-style: disc;
+		margin: 1em;
+	}
+
+	h2 {
+		margin-bottom: 1em;
+	}
+</style>

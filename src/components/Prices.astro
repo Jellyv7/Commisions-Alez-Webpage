@@ -10,21 +10,21 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 	</header>
 	<div class="images">
 		<div>
-			<Image src={images[0]} alt="Commision Example Image" decoding="async"/>
+			<Image src={images[0]} alt="Commision Example Image"/>
 			<div>
 				<span>Sketch</span>
 				<span>{prices[0]}$</span>
 			</div>
 		</div>
 		<div>
-			<Image src={images[1]} alt="Commision Example Image" decoding="async"/>
+			<Image src={images[1]} alt="Commision Example Image"/>
 			<div>
 				<span>Black and White</span>
 				<span>{prices[1]}$</span>
 			</div>
 		</div>
 		<div>
-			<Image src={images[2]} alt="Commision Example Image" decoding="async"/>
+			<Image src={images[2]} alt="Commision Example Image"/>
 			<div>
 				<span>Full Color</span>
 				<span>{prices[2]}$</span>
@@ -83,6 +83,7 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 
 	footer {
 		display: flex;
+		position: relative;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
@@ -92,5 +93,25 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 		color: var(--background-100);
 		font-size: 1.2rem;
 		margin-top: unset;
+	}
+
+	footer::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--background-900); 
+		transform: scaleY(0);
+		transform-origin: 50% 100%;
+		transition-duration: 0.5s;
+		transition-timing-function: ease-out;
+	}
+
+	footer:hover::before {
+		transform: scaleY(1);
+		transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 	}
 </style>
