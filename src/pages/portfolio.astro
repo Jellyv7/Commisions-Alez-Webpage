@@ -52,11 +52,13 @@ const images = [
 		height: 100%;
 		border-radius: 20px;
 		object-fit: cover;
-		transition: all 0.3s ease;
+		transition: scale .3s ease, filter .3s ease;
+		filter: contrast(0.9);
+		filter: brightness(1.1)
 	}
 
 	li > img:hover {
 		scale: 1.1;
-
+		filter: unset;
 	}
 </style>

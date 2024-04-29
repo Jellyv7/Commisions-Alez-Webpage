@@ -21,7 +21,7 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 			</a>
 		</li>
 		<li>
-			<a href="/portfolio"
+			<a href="/portfolio">
 				<span>
 					Portfolio
 				</span>
@@ -29,7 +29,7 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 			</a>
 		</li>
 		<li>
-			<a href="/tos"
+			<a href="/tos">
 				<span>
 					T.O.S
 				</span>
@@ -59,6 +59,7 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 
 	li > a {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		min-width: 10em;
 		padding: 1em;
@@ -78,5 +79,18 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 		border: 1px var(--background-100) solid;
 		color: var(--background-100);
 		transition: all 0.3s ease;
+	}
+
+	@media (width <= 700px) {
+
+		nav {
+			margin-top: 3em;
+		}
+
+		li > a {
+			font-size: 0.5rem;
+			padding: 0.45em;
+			gap: 0.2em;
+		}
 	}
 </style>
