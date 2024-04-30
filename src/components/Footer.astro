@@ -7,9 +7,7 @@
 	</span>
 </div>
 
-
 <style>
-
 	.email {
 		display: flex;
 		flex-direction: column;
@@ -19,6 +17,16 @@
 
 	.email > span:hover > a {
 		text-decoration: underline;
+	}
+
+	@media (width < 700px) {
+		div.email > span {
+			font-size: 0.7rem;
+		}
+
+		div.email > span > a {
+			font-size: 0.5rem;
+		}
 	}
 </style>
 

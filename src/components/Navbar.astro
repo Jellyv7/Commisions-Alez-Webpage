@@ -53,15 +53,21 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 	ul {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		width: 100%;
 		gap: 1em;
+	}
+
+	li {			
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	li > a {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		min-width: 10em;
 		padding: 1em;
 		background-color: var(--background-100);
 		border-radius: var(--border-radius);
@@ -72,6 +78,10 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 		cursor: pointer;
 		transition: all 0.3s ease;
 		font-size: 0.9rem;
+	}
+
+	li > a > svg {
+		width: 2em;
 	}
 
 	li > a:hover {
@@ -85,12 +95,25 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 
 		nav {
 			margin-top: 3em;
+			width: 75%;
+			padding: 0.15em 0.5em;
+		}
+
+		ul {
+			gap: 0.25em;
+		}
+
+		li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
 		}
 
 		li > a {
-			font-size: 0.5rem;
-			padding: 0.45em;
-			gap: 0.2em;
+			font-size: 0.25rem;
+			padding: 0.5em;
+			gap: 2rem;
 		}
 	}
 </style>

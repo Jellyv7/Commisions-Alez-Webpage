@@ -108,7 +108,6 @@ const { title } = Astro.props;
 	html {
   		font-family: "Potta One", system-ui;
 		background-color: white;
-		letter-spacing: -0.025rem;
 		background: url('../assets/texture.png') repeat;
 		background-color: #7e4b2a;
 	}
@@ -144,6 +143,7 @@ const { title } = Astro.props;
 		align-items: center;
 		flex-direction: column;
 		width: 70%;
+		height: 100%;
 		background-color: #F1E7D0;
 		border-radius: 20px;
 		border: 2px var(--background-900) solid;
@@ -178,7 +178,21 @@ const { title } = Astro.props;
 
 	@media (width <= 700px) {
 		.card {
-			width: fit-content;
+			width: 100%;
+		}
+
+		.content {
+			width: 75%;
+			margin-top: 0.5em;
+			margin-bottom: 3.5em;
+		}
+
+		footer {
+			margin-top: 1em;
+		}
+
+		.watermark {
+			font-size: 0.3rem;
 		}
 	}
 </style>

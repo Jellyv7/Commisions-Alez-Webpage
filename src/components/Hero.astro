@@ -1,6 +1,5 @@
 ---
 ---
-
 <section>
 	<img src="./ProfilePhoto.webp" alt="Profile Photo" draggable="false">
 	<div>
@@ -89,6 +88,40 @@
 		gap: 5em;
 		color: var(--background-950);
 		text-align: center;
+	}
+
+	@media (width <= 700px) {
+		section {
+			padding: 0.5em;
+			padding-left: 1em;
+			padding-right: 3em;
+			gap: 3em;
+		}
+
+		section > div > div.title > h1 {
+			font-size: 1.9rem;
+		}
+
+		section > div > div.title > h2 {
+			font-size: 0.26rem;
+		}
+
+		img {
+			width: 400px;
+			border: 2px var(--background-950) solid;
+			margin-top: 29px;
+		}
+
+		.summary {
+			padding: 0.5em 1em;
+			gap: 1em;
+			width: 300%;
+			border: 2px var(--background-950) solid;
+		}
+
+		section > div > div.summary > span {
+			font-size: 0.3rem;
+		}
 	}
 
 </style>
