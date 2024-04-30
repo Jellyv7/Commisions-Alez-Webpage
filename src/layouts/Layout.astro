@@ -52,6 +52,13 @@ const { title } = Astro.props;
 		</div>
 	</body>
 </html>
+
+<script>
+	window.addEventListener('contextmenu', e => {
+		return e.preventDefault();
+	})
+</script>
+
 <style is:global>
 	* {
 		margin: 0;
