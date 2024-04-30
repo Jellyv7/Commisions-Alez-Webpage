@@ -7,18 +7,24 @@
 	section {
 		display: flex;
 		flex-direction: column;
+		padding: 2em;
+		gap: 1em;
 	}
 
 	img {
-		width: 1370px;
-		border-radius: 50px;
+		width: 1170px;
+		border-radius: 20px;
 	}
 
 	@media (width <= 700px) {
+		section {
+			padding: 1em;
+			gap: 0.5em;
+		}
+
 		img {
-			width: 750px;
-			padding: 0.6em;
-			padding-right: 1em;
+			width: 480px;
+			padding: 0.5em;
 			border-radius: 25px;
 		}
 	}
