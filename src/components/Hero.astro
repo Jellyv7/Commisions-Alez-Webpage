@@ -35,7 +35,7 @@
 		width: 450px;
 		margin-top: 50px;
 		border-radius: 50%;
-		border: var(--border-weight) var(--background-950) solid;
+		border: 4px var(--background-950) solid;
 		aspect-ratio: 1 / 1;
 	}
 
@@ -80,8 +80,8 @@
 		justify-content: center;
 		flex-direction: column;
 		background-color: var(--background-100);
-		border: var(--border-weight) var(--background-950) solid;
-		border-radius: var(--border-radius);
+		border: 4px var(--background-950) solid;
+		border-radius: 10px;
 		width: 100%;
 		padding: 3em;
 		font-size: 0.5rem;
@@ -92,43 +92,32 @@
 
 	@media (width <= 700px) {
 		section {
-			width: 100%;
+			font-size: 0.6rem;
 			padding: 0.5em;
-			padding-left: 1em;
-			padding-right: 3em;
-			gap: 3em;
-		}
-
-		section > div {
-			width: 25em;
-		}
-
-		section > div > div.title > h1 {
-			font-size: 2.5rem;
-		}
-
-		section > div > div.title > h2 {
-			text-align: center;
-			font-size: 0.35rem;
+			gap: 0.5em;
 		}
 
 		img {
-			width: 400px;
-			border: 2px var(--background-950) solid;
-			margin-top: 15px;
+			width: 150px;
+			margin-top: 30px; 
 		}
 
-		.summary {
-			padding: 0.5em 1em;
-			gap: 1em;
-			width: 120%;
-			border: 2px var(--background-950) solid;
-			border-radius: 10px;
+		section > div > div.title > h1 {
+			font-size: 1.5rem;
+		}
+
+		section > div > div.title > h2 {
+			font-size: 0.5em;
+			text-align: center;
 		}
 
 		section > div > div.summary > span {
-			font-size: 0.5rem;
+			font-size: 0.40rem;
+		}
+
+		section > div > div.summary {
+			padding: 0.5em;
+			gap: 1em;
 		}
 	}
-
 </style>

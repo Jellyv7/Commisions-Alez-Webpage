@@ -1,0 +1,36 @@
+---
+import Examples from "./Examples.astro";
+import AboutMe from "./AboutMe.astro";
+import SocialMedia from "./SocialMedia.astro";
+---
+
+<section>
+	<div>
+		<div class="info">
+			<SocialMedia />
+			<AboutMe />
+		</div>
+		<Examples />
+	</div>
+</section>
+
+<style>
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.info {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+</style>

@@ -1,29 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import SocialMedia from '../components/SocialMedia.astro';
-import AboutMe from '../components/AboutMe.astro';
-import Examples from '../components/Examples.astro';
+import Section2 from 'src/components/Section2.astro';
 ---
 
 <Layout title="Alez Commisions">
 		<Hero />
 		<div>
-			<div class="info">
-				<SocialMedia />
-				<AboutMe />
-			</div>
-			<Examples />
+			<Section2 />
 		</div>
 </Layout>
 
 <style>
 	div {
 		display: flex;
-	}
-
-	div > .info {
-		display: flex;
-		flex-direction: column;
+		width: 100%;
 	}
 </style>
