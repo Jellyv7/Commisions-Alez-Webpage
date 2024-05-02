@@ -3,49 +3,65 @@ import { Instagram, Discord, Twitter, YouTube, Kofi } from '@icons';
 ---
 
 <section>
-	<h1>
-		Social Media
-	</h1>
-	<ul>
-		<li>
-			<a href="https://www.instagram.com/alezsii_/" title="Follow me on Instagram!">
-				<Instagram />
-			</a>
-		</li>
-		<li>
-			<a href="https://discordapp.com/users/" title="Send me a messagge!">
-				<Discord />
-			</a>
-		</li>
-		<li>
-			<a href="https://twitter.com/alezsii" title="Follow me on X!">
-				<Twitter />
-			</a>
-		</li>
-		<li>
-			<a href="https://www.youtube.com/@alezsii_" title="Subscribe to my YouTube channel!">
-				<YouTube />
-			</a>
-		</li>
-		<li>
-			<a href="https://ko-fi.com/alezsii_" title="Buy me a coffee!">
-				<Kofi />
-			</a>
-		</li>
-	</ul>
+	<div>
+		<h1>
+			Social Media
+		</h1>
+		<ul>
+			<li>
+				<a href="https://www.instagram.com/alezsii_/" title="Follow me on Instagram!">
+					<Instagram />
+				</a>
+			</li>
+			<li>
+				<a href="https://discordapp.com/users/" title="Send me a messagge!">
+					<Discord />
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/alezsii" title="Follow me on X!">
+					<Twitter />
+				</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/@alezsii_" title="Subscribe to my YouTube channel!">
+					<YouTube />
+				</a>
+			</li>
+			<li>
+				<a href="https://ko-fi.com/alezsii_" title="Buy me a coffee!">
+					<Kofi />
+				</a>
+			</li>
+		</ul>
+	</div>
+	<img src="/example1.webp" alt="Example Commision 1">
 </section>
 
 <style>
 	section {
 		display: flex;
 		align-items: flex-start;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0em 2em;
+		gap: 3em;
+	}
+
+	div {
+		display: flex;
+		align-items: flex-start;
 		justify-content: flex-start;
 		flex-direction: column;
-		padding: 2em;
 		gap: 1em;
 	}
 
-	section > h1 {
+	img {
+		width: 13vw;
+		border-radius: 20px;
+	}
+
+	section > div > h1 {
 		font-size: 2.5rem;
 		color: var(--background-100)
 	}
@@ -74,21 +90,26 @@ import { Instagram, Discord, Twitter, YouTube, Kofi } from '@icons';
 
 	@media (width <= 700px) {
 		section {
-			padding: 0.5em;
-			gap: 0.5em;
+			padding: 0em 0.5em;
+			gap: 1em;
 		}
 
-		section > h1 {
+		img {
+			width: 28vh;
+			border-radius: 10px;
+		}
+
+		section > div > h1 {
 			font-size: 1rem;
 		}
 
-		ul {
+		section > div > ul {
 			gap: 0.2em;
 		}
 
-		li > a {
-			padding: unset;
-			border-radius: 5px;
+		section > div > ul > li > a {
+			padding: 0.2em;
+			border-radius: 10px;
 		}
 
 		li > a > svg {

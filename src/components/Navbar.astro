@@ -58,6 +58,7 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 		gap: 0.5em;
 	}
 
+
 	li > a {
 		display: flex;
 		align-items: center;
@@ -82,8 +83,15 @@ import {Home, Commisions, Portfolio, Terms} from '@icons';
 	}
 
 	@media (width <= 700px) {
-		nav > ul > li > a{
-			font-size: 0.5rem;
+		nav {
+			margin-top: 3em;
+		}
+
+		li > a {
+			padding: 1em 0.50em;
+			font-size: 0.35rem;
+			gap: 1em;
+			width: 100%;
 		}
 	}
 </style>

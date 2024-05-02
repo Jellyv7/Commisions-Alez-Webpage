@@ -149,6 +149,10 @@ const { title } = Astro.props;
 	}
 	
 	.content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 		margin-top: 1em;
 		background-position: 0px 0px;
 		background-image: linear-gradient(0deg, var(--background-900) 0%, var(--background-500) 100%);
@@ -180,8 +184,16 @@ const { title } = Astro.props;
 			padding-inline: 1em;
 		}
 
+		.content {
+			margin-bottom: 5em;
+		}
+
 		footer {
 			margin-top: 2em;
+		}
+
+		.watermark > a {
+			font-size: 0.4rem;
 		}
 	}
 </style>

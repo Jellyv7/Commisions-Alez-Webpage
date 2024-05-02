@@ -1,26 +1,41 @@
 <section>
-	<h1>About Me</h1>
-	<article>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta itaque nesciunt, corrupti vero sequi aliquid reprehenderit rerum dignissimos labore molestias quas sed repellat sit, reiciendis eius similique voluptatibus aut optio?</p>
-	</article>
+	<div>
+		<h1>About Me</h1>
+		<article>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta itaque nesciunt, corrupti vero sequi aliquid reprehenderit rerum dignissimos labore molestias quas sed repellat sit, reiciendis eius similique voluptatibus aut optio?</p>
+		</article>
+	</div>
+	<img src="/example2.webp" alt="Example Commision 2">
 </section>
 
 <style>
 	section {
 		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-direction: column;
-		padding: 2em;
+		align-items: flex-end;
+		justify-content: flex-end;
+		padding: 0em 2em;
 		gap: 2em;
 	}
 
-	h1 {
+	div {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	img {
+		width: 59vw;
+		border-radius: 20px;
+	}
+
+	section > div > h1 {
 		font-size: 3rem;
 		color: var(--background-100);
 	}
 
-	article {
+	section > div > article {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -38,23 +53,25 @@
 
 	@media (width <= 700px) {
 		section {
-			padding: 0.5em;
-			gap: 0.5em;
+			padding: 0em 0.5em;
+			gap: 1em;
 		}
 
-		h1 {
+		img {
+			width: 60vh;
+			border-radius: 10px
+		}
+
+		section > div > h1 {
 			font-size: 1rem;
 		}
 
-		ul {
-			gap: 0.2em;
-		}
 
-		article {
+		section > div > article {
 			padding: 0.5em;
 		}
 
-		article > p {
+		section > div > article > p {
 			font-size: 0.35rem;
 		}
 	}

@@ -5,13 +5,10 @@ import SocialMedia from "./SocialMedia.astro";
 ---
 
 <section>
-	<div>
 		<div class="info">
 			<SocialMedia />
 			<AboutMe />
 		</div>
-		<Examples />
-	</div>
 </section>
 
 <style>
@@ -29,8 +26,9 @@ import SocialMedia from "./SocialMedia.astro";
 
 	.info {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: flex-start;
+		justify-content: space-between;
 		flex-direction: column;
+		width: 100%;
 	}
 </style>
