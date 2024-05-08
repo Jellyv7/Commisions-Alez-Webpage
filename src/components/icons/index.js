@@ -8,4 +8,4 @@ export {default as Discord} from './Discord.astro';
 export {default as Twitter} from './Twitter.astro';
 export {default as YouTube} from './YouTube.astro'
 export {default as Kofi} from './Kofi.astro';
-
+export {default as Facebook} from './Facebook.astro';

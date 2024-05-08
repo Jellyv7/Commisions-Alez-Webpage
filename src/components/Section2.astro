@@ -6,8 +6,9 @@ import SocialMedia from "./SocialMedia.astro";
 
 <section>
 		<div class="info">
-			<SocialMedia />
 			<AboutMe />
+			<SocialMedia />
+			<Examples />
 		</div>
 </section>
 
@@ -30,6 +31,12 @@ import SocialMedia from "./SocialMedia.astro";
 		justify-content: space-between;
 		flex-direction: column;
 		width: 100%;
-		gap: 1em;
+		gap: 3em;
+	}
+
+	@media (width <= 700px) {
+		.info {
+			gap: unset;
+		}
 	}
 </style>

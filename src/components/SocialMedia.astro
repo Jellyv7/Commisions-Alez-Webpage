@@ -1,5 +1,5 @@
 ---
-import { Instagram, Twitter, YouTube, Kofi } from "@icons";
+import { Instagram, Twitter, YouTube, Kofi, Facebook } from "@icons";
 const SOCIAL_MEDIA = [
 	{
 		icon: Instagram,
@@ -17,15 +17,20 @@ const SOCIAL_MEDIA = [
 		title: "Subscribe to my YouTube channel!",
 	},
 	{
+		icon: Facebook,
+		url: "https://www.facebook.com/AlexSlashdot",
+		title: "Follow me on Facebook!",
+	},
+	{
 		icon: Kofi,
 		url: "https://ko-fi.com/alezsii_",
 		title: "Buy me a coffee!",
-	},
+	}
 ];
 ---
 <section>
 	<div>
-		<h1>Social<br>Media</h1>
+		<h2>Social Media</h2>
 		<ul>
 			{
 				SOCIAL_MEDIA.map(({ icon, url, title }) => {
@@ -41,14 +46,13 @@ const SOCIAL_MEDIA = [
 			}
 		</ul>
 	</div>
-	<img src="/example1.webp" alt="Example Commision 1" />
 </section>
 
 <style>
 	section {
 		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		padding: 0em 2em;
 		gap: 3em;
@@ -56,8 +60,8 @@ const SOCIAL_MEDIA = [
 
 	div {
 		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
+		align-items: center;
+		justify-content: center;
 		flex-direction: column;
 		gap: 1em;
 	}
@@ -67,8 +71,8 @@ const SOCIAL_MEDIA = [
 		border-radius: 20px;
 	}
 
-	section > div > h1 {
-		font-size: 2.5rem;
+	section > div > h2 {
+		font-size: 4rem;
 		color: var(--background-100);
 	}
 
@@ -96,8 +100,7 @@ const SOCIAL_MEDIA = [
 
 	@media (width <= 700px) {
 		section {
-			padding: 0em 0.5em;
-			gap: 1em;
+			padding: 1em;
 		}
 
 		img {
@@ -105,12 +108,12 @@ const SOCIAL_MEDIA = [
 			border-radius: 10px;
 		}
 
-		section > div > h1 {
+		section > div > h2 {
 			font-size: 1rem;
 		}
 
 		section > div > ul {
-			gap: 0.2em;
+			gap: 0.3em;
 		}
 
 		section > div > ul > li > a {
