@@ -27,11 +27,6 @@
 		gap: 1em;
 	}
 
-	img {
-		width: 200px;
-		border-radius: 20px;
-	}
-
 	section > div > h2 {
 		font-size: 4rem;
 		color: var(--background-100);
@@ -55,24 +50,20 @@
 	}
 
 	@media (width <= 700px) {
+		div {
+			gap: 0.5em;
+		}
+		
 		section {
 			padding: 0em 0.5em;
-			gap: 1em;
-		}
-
-		img {
-			width: 200px;
-			border-radius: 10px
 		}
 
 		section > div > h2 {
 			font-size: 1rem;
 		}
 
-
 		section > div > article {
 			padding: 0.5em;
-			max-width: 21em;
 		}
 
 		section > div > article > p {

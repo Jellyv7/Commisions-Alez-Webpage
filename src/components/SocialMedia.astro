@@ -66,11 +66,6 @@ const SOCIAL_MEDIA = [
 		gap: 1em;
 	}
 
-	img {
-		width: 200px;
-		border-radius: 20px;
-	}
-
 	section > div > h2 {
 		font-size: 4rem;
 		color: var(--background-100);
@@ -78,7 +73,7 @@ const SOCIAL_MEDIA = [
 
 	ul {
 		display: flex;
-		gap: 0.5em;
+		gap: 1em;
 	}
 
 	li > a {
@@ -99,13 +94,13 @@ const SOCIAL_MEDIA = [
 	}
 
 	@media (width <= 700px) {
-		section {
-			padding: 1em;
+
+		div {
+			gap: 0.5em;
 		}
 
-		img {
-			width: 200px;
-			border-radius: 10px;
+		section {
+			padding: 1em;
 		}
 
 		section > div > h2 {
@@ -119,10 +114,6 @@ const SOCIAL_MEDIA = [
 		section > div > ul > li > a {
 			padding: 0.2em;
 			border-radius: 10px;
-		}
-
-		li > a > svg {
-			width: 100px;
 		}
 	}
 </style>

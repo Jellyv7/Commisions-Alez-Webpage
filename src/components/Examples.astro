@@ -1,6 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { kaijudia8, hyeseoredraw } from '../assets/index';
+const EXAMPLES = [
+	{
+		name: 'Day 8 Kaiju',
+		src: kaijudia8
+	},
+	{
+		name: 'Hyeseo Redraw',
+		src: hyeseoredraw
+	}
+]
+---
+
 <section>
-	<img src="src/assets/dia8kaiju.png" alt="Example Image" draggable="false">
-	<img src="src/assets/hyeseoredraw.jpg" alt="Example Image" draggable="false">
+	{
+		EXAMPLES.map(({name, src}) => {
+			return (
+				<Image src={src} alt={name}/>
+			)
+		})
+	}
 </section>
 
 <style>

@@ -13,3 +13,5 @@ export {default as portfolio6} from './portfolio6.jpg';
 export {default as portfolio7} from './portfolio7.jpg';
 export {default as portfolio8} from './portfolio8.jpg';
 export {default as portfolio9} from './portfolio9.jpg';
+export {default as kaijudia8} from './dia8kaiju.png';
+export {default as hyeseoredraw} from './hyeseoredraw.jpg';
