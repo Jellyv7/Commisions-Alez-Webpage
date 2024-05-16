@@ -1,42 +1,45 @@
 ---
 import { Image } from "astro:assets";
 const { comm } = Astro.props;
-const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDelivery } = comm;
+const { title, images, prices, extraCharacterPrice, maxExtraCharacters, detailedDesign } = comm;
+
 ---
 
 <section>
 	<header>
-		<h1>{title}</h1>
+		<h2>{title}</h2>
 	</header>
 	<div class="images">
-		<div>
-			<Image src={images[0]} alt="Commision Example Image"/>
 			<div>
-				<span>Sketch</span>
-				<span>{prices[0]}$</span>
+				{
+					images.map(({src, alt}) => {
+						return (
+							<Image src={src} alt={alt} />
+						)
+					})
+				}
 			</div>
-		</div>
-		<div>
-			<Image src={images[1]} alt="Commision Example Image"/>
-			<div>
-				<span>Black & White</span>
-				<span>{prices[1]}$</span>
+			<div class="prices">
+				{
+					
+					prices.map(({type, price}) => {
+						return (
+								<div>
+									<span>{type}</span>
+
+									<span>{price}$</span>
+								</div>
+						)
+					})
+				}
 			</div>
-		</div>
-		<div>
-			<Image src={images[2]} alt="Commision Example Image"/>
-			<div>
-				<span>Full Color</span>
-				<span>{prices[2]}$</span>
-			</div>
-		</div>
 	</div>
 	<footer>
 		<span>
 			+{extraCharacterPrice}% extra characters <em>(Max {maxExtraCharacters})</em>
 		</span>
 		<span>
-			+{fastDelivery}% fast delivery
+			+{detailedDesign}% detailed design
 		</span>
 	</footer>
 </section>
@@ -59,7 +62,9 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 	
 	.images {
 		display: flex;
-		align-items: baseline;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 		width: 85%;
 	}
 
@@ -67,16 +72,25 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-direction: column;
 	}
 
-	.images > div > div {
+	.images > .prices {
+		display: flex;
+		color: var(--background-100);
+		margin-top: 0.5em; 
+		gap: 3.5em;
+	}
+
+	.images > .prices > div {
 		display: flex;
 		flex-direction: column;
-		color: var(--background-100);
 		text-align: center;
-		margin-top: 0.5em; 
+		font-size: 1.3rem;
 	}
+
+	.images > .prices > div > span:first-child {
+		color: var(--background-950);
+	} 
 
 	em {
 		color: var(--background-300);
@@ -118,18 +132,22 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 
 	@media (width <= 700px) {
 		section {
-			gap: .5em;
-		}
-
-		span {
-			font-size: 0.7rem;
+			gap: 0.5em;
 		}
 
 		header {
-			margin-top: .5em;
 			font-size: 1rem;
+			margin-top: 0.5em;
 		}
 
+		.images > .prices {
+			gap: 0.7em;
+		}
+
+		.images > .prices > div > span {
+			font-size: 0.5rem;
+		}
+		
 		footer > span {
 			font-size: 0.5rem;
 		}
