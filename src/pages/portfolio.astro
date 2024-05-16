@@ -60,4 +60,16 @@ const images = [
 		scale: 1.1;
 		filter: unset;
 	}
+
+	@media (width <= 700px) {
+		ul {
+			grid-gap: 0.5em;
+			margin: 0.5em;
+		}
+
+		li > img {
+			border-radius: 10px;
+			filter: unset;
+		}
+	}
 </style>
