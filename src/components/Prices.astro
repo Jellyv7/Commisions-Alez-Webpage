@@ -19,7 +19,7 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 		<div>
 			<Image src={images[1]} alt="Commision Example Image"/>
 			<div>
-				<span>Black and White</span>
+				<span>Black & White</span>
 				<span>{prices[1]}$</span>
 			</div>
 		</div>
@@ -59,6 +59,7 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 	
 	.images {
 		display: flex;
+		align-items: baseline;
 		width: 85%;
 	}
 
@@ -113,5 +114,24 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, fastDeli
 	footer:hover::before {
 		transform: scaleY(1);
 		transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+	}
+
+	@media (width <= 700px) {
+		section {
+			gap: .5em;
+		}
+
+		span {
+			font-size: 0.7rem;
+		}
+
+		header {
+			margin-top: .5em;
+			font-size: 1rem;
+		}
+
+		footer > span {
+			font-size: 0.5rem;
+		}
 	}
 </style>
