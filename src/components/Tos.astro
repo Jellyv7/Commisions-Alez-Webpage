@@ -1,26 +1,31 @@
 ---
+
 import Layout from "src/layouts/Layout.astro";
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
+
 const terms = [
-	'Payment is made via an invoice on PayPal.',
-	'Work on the commission begins once payment is completed (or 50% of it).',
-	'Refunds are not allowed once work on the commission has started, unless unforeseen circumstances prevent its completion.',
-	' The price may be subject to change depending on the complexity of the order.',
-	' If the work to be done is only a sketch, payment must be made in full after all details have been discussed with the client.'
+	i18n.TOS_1,
+	i18n.TOS_2,
+	i18n.TOS_3,
+	i18n.TOS_4,
+	i18n.TOS_5
 ]
 const detailsAndUse = [
-	'I reserve the copyright. My watermark cannot be removed, nor can the artwork be resold.',
-	'I reserve the right to refuse if I am not comfortable with the commission or if I consider my skill insufficient to complete it.',
-	'I do not provide specific delivery dates; I work on a first-come, first-served basis. If you need the commission by a specific date, please let me know.',
-	'You may share the commission on social media with proper credits.',
-	'The commission will be delivered via email, only in PNG or JPEG formats at their original size. If you require the editable file, there will be an additional cost.',
-	'Please provide multiple visual references for the pose, expression, and a brief description of the character’s personality (especially for original characters).',
-	'You can request necessary revisions during the sketching process. Once the final sketch is approved, no further changes are allowed.'
+	i18n.DETAILS_1,
+	i18n.DETAILS_2,
+	i18n.DETAILS_3,
+	i18n.DETAILS_4,
+	i18n.DETAILS_5,
+	i18n.DETAILS_6,
+	i18n.DETAILS_7
 ]
 ---
 
-<Layout title="Terms and Conditions">
+<Layout title={i18n.TOS_TITLE}>
 	<section>
-		<h2>Terms and Conditions</h2>
+		<h2>{i18n.TOS_TITLE}</h2>
 		<ul>
 			{
 				terms.map(term => {
@@ -32,7 +37,7 @@ const detailsAndUse = [
 		</ul>
 	</section>
 	<section>
-		<h2>Details of Use and Requirements</h2>
+		<h2>{i18n.DETAILS_TITLE}</h2>
 		<ul>
 			{
 				detailsAndUse.map(details => {

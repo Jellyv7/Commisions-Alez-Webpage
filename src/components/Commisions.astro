@@ -2,10 +2,13 @@
 import Layout from "src/layouts/Layout.astro";
 import Prices from "src/components/Prices.astro";
 import { example1, example2, example3, example4, example5, example6 } from "../assets/index.js";
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
 
 const comms = [
 	{
-		title: 'Soft Line',
+		title: i18n.COMMISIONS_SOFT_LINE,
 		images: [
 			{
 				src: example1,
@@ -18,19 +21,19 @@ const comms = [
 		],
 		prices: [
 			{
-				type: 'Icon',
+				type: i18n.COMMISIONS_ICON,
 				price: 5
 			},
 			{
-				type: 'Bust',
+				type: i18n.COMMISIONS_BUST,
 				price: 10
 			},
 			{
-				type: 'Half Body',
+				type: i18n.COMMISIONS_HALF_BODY,
 				price: 17
 			},
 			{
-				type: 'Full Body',
+				type: i18n.COMMISIONS_FULL_BODY,
 				price: 25
 			}
 		],
@@ -39,7 +42,7 @@ const comms = [
 		detailedDesign: 20
 	},
 	{
-		title: 'Hard Line',
+		title: i18n.COMMISIONS_HARD_LINE,
 		images: [
 			{
 				src: example3,
@@ -52,19 +55,19 @@ const comms = [
 		],
 		prices: [
 			{
-				type: 'Icon',
+				type: i18n.COMMISIONS_ICON,
 				price: 15
 			},
 			{
-				type: 'Bust',
+				type: i18n.COMMISIONS_BUST,
 				price: 20
 			},
 			{
-				type: 'Half Body',
+				type: i18n.COMMISIONS_HALF_BODY,
 				price: 28
 			},
 			{
-				type: 'Full Body',
+				type: i18n.COMMISIONS_FULL_BODY,
 				price: 35
 			}
 		],
@@ -73,7 +76,7 @@ const comms = [
 		detailedDesign: 20
 	},
 	{
-		title: 'Rendered',
+		title: i18n.COMMISIONS_RENDERED,
 		images: [
 		{
 				src: example5,
@@ -86,15 +89,15 @@ const comms = [
 		],
 		prices: [
 			{
-				type: 'Icon',
+				type: i18n.COMMISIONS_ICON,
 				price: 10
 			},
 			{
-				type: 'Bust',
+				type: i18n.COMMISIONS_BUST,
 				price: 17
 			},
 			{
-				type: 'Half Body',
+				type: i18n.COMMISIONS_HALF_BODY,
 				price: 25
 			}
 		],
@@ -111,7 +114,7 @@ const comms = [
 			comms.map(comm => <Prices comm={comm}/>)
 		}
 		<div class="terms__button">
-			<a href="/tos">TERMS <br/>AND<br/> CONDITIONS</a>
+			<a href={currentLocale === 'en' ? '/tos' : '/es/tos'} set:html={i18n.TOS_TITLE_BUTTON}></a>
 		</div>
 	</div>
 </Layout>
@@ -136,6 +139,7 @@ const comms = [
 		font-size: 0.8rem;
 		color: var(--background-100);
 		transition: all 0.3s ease;
+		text-transform: uppercase;
 	}
 
 	div > .terms__button:hover {

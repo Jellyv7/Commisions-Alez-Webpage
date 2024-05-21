@@ -2,6 +2,9 @@
 import { Image } from "astro:assets";
 const { comm } = Astro.props;
 const { title, images, prices, extraCharacterPrice, maxExtraCharacters, detailedDesign } = comm;
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
 
 ---
 
@@ -36,10 +39,10 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, detailed
 	</div>
 	<footer>
 		<span>
-			+{extraCharacterPrice}% extra characters <em>(Max {maxExtraCharacters})</em>
+			+{extraCharacterPrice}% {i18n.COMMISIONS_EXTRA_CHARACTERS} <em>(Max {maxExtraCharacters})</em>
 		</span>
 		<span>
-			+{detailedDesign}% detailed design
+			+{detailedDesign}% {i18n.COMMISIONS_DETAILED_DESIGN}
 		</span>
 	</footer>
 </section>
@@ -84,7 +87,6 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, detailed
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		font-size: 1.3rem;
 	}
 
 	.images > .prices > div > span:first-child {
