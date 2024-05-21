@@ -69,9 +69,8 @@ const { title, images, prices, extraCharacterPrice, maxExtraCharacters, detailed
 	}
 
 	.images > div {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.images > .prices {

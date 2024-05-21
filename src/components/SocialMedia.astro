@@ -1,5 +1,8 @@
 ---
 import { Instagram, Twitter, YouTube, Kofi, Facebook } from "@icons";
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
 const SOCIAL_MEDIA = [
 	{
 		icon: Instagram,
@@ -30,7 +33,7 @@ const SOCIAL_MEDIA = [
 ---
 <section>
 	<div>
-		<h2>Social Media</h2>
+		<h2>{i18n.SOCIAL_MEDIA}</h2>
 		<ul>
 			{
 				SOCIAL_MEDIA.map(({ icon, url, title }) => {

@@ -1,11 +1,14 @@
+---
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
+---
+
 <section>
 	<div>
-		<h2>About Me</h2>
+		<h2>{i18n.ABOUT}</h2>
 		<article>
-			<p>
-				22 years old, Venezuelan. <br>
-				Character designer, Gl enthusiast, Writer in my free time and Avid completist
-			</p>
+			<p set:html={i18n.ABOUT_PARAGRAPH}></p>
 		</article>
 	</div>
 </section>

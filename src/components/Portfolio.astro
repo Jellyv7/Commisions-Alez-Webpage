@@ -1,0 +1,75 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import { portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6, portfolio7, portfolio8, portfolio9 } from 'src/assets/index.js';
+const images = [
+	portfolio1, 
+	portfolio2, 
+	portfolio3,
+	portfolio4,
+	portfolio5,
+	portfolio6,
+	portfolio7,
+	portfolio8,
+	portfolio9
+]
+---
+
+<Layout title="Portfolio">
+		<section>
+			<ul>
+				{
+					images.map(elem => {
+						return (
+							<li>
+								<Image src={elem} alt="ok" draggable="false" />
+							</li>
+						)
+					})
+				}
+			</ul>
+
+		</section>
+</Layout>
+
+<style>
+	ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1em;
+		margin: 2em;
+		width: fit-content;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	li > img {
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		object-fit: cover;
+		transition: scale .3s ease, filter .3s ease;
+		filter:  brightness(1.2) contrast(0.9);
+	}
+
+	li > img:hover {
+		scale: 1.1;
+		filter: unset;
+	}
+
+	@media (width <= 700px) {
+		ul {
+			grid-gap: 0.5em;
+			margin: 0.5em;
+		}
+
+		li > img {
+			border-radius: 10px;
+			filter: unset;
+		}
+	}
+</style>

@@ -1,35 +1,38 @@
 ---
 import {Home, Commisions, Portfolio, Terms} from '@icons';
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
 ---
 
 <nav>
 	<ul>
 		<li>
-			<a href="/">
+			<a href={currentLocale === 'en' ? '/' : '/es'}>
 				<span>
-					Homepage
+					{i18n.HOME_NAVBAR}
 				</span>
 				<Home />
 			</a>
 		</li>
 		<li>
-			<a href="/commisions">
+			<a href={currentLocale === 'en' ? '/commisions' : '/es/comisiones'}>
 				<span>
-					Commisions
+					{i18n.COMMISIONS_NAVBAR}
 				</span>
 				<Commisions />
 			</a>
 		</li>
 		<li>
-			<a href="/portfolio">
+			<a href={currentLocale === 'en' ? '/portfolio' : '/es/portafolio'}>
 				<span>
-					Portfolio
+					{i18n.PORTFOLIO_NAVBAR}
 				</span>
 				<Portfolio />
 			</a>
 		</li>
 		<li>
-			<a href="/tos">
+			<a href={currentLocale === 'en' ? '/tos' : '/es/tos'}>
 				<span>
 					T.O.S
 				</span>

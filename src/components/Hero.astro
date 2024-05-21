@@ -1,4 +1,7 @@
 ---
+import { getI18N } from "../../i18n/index";
+const { currentLocale = 'en' } = Astro;
+const i18n = getI18N(currentLocale);
 ---
 <section>
 	<img src="./ProfilePhoto.webp" alt="Alez Profile Photo" draggable="false">
@@ -8,12 +11,12 @@
 				Alezsii
 			</h1>
 			<h2>
-				Digital Artist - Illustrator Student
+				{i18n.HERO_SUBTITLE}
 			</h2>
 		</div>
 		<div class="summary">
 			<span>
-				Hi, I'm Alez, at your service! 🤎
+				{i18n.HERO_SUMMARY}
 			</span>
 			<span>
 				He/They - ENG/ESP

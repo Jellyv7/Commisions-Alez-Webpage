@@ -1,5 +1,5 @@
 export {default as example1} from './hyeseoredraw.jpg';
-export {default as example2} from './mikuuuu2.jpg';
+export {default as example2} from './mikuuuu.png';
 export {default as example3} from './photo-couple-new.jpg';
 export {default as example4} from './girl-w-n-glasses.jpg';
 export {default as example5} from './farcille-pre.png';

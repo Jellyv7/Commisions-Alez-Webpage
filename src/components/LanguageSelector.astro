@@ -1,0 +1,80 @@
+---
+const LANGUAGES = [{
+	name: 'Español',
+	code: 'es'
+},
+{
+	name: 'English',
+	code: 'en'
+}]
+const { currentLocale } = Astro;
+---
+
+<div>
+	<div>
+	  <button id="select-language"type="button">{currentLocale === 'en' ? 'English' : 'Español' }</button>
+	  <ul class="show" id="button-list" >
+		{
+			LANGUAGES.map(({name, code}) => {
+				return (
+					<li class={code}>
+						<a href={code === 'es' ? `/${code}` : '/'}>{name}</a>
+					</li>
+				)
+			})
+		}
+	  </ul>
+	</div>
+</div>
+
+<script>
+	const button = document.getElementById('select-language');
+	const list = document.getElementById('button-list');
+	button.addEventListener('click', () => {
+		list.classList.toggle('show');
+	})
+
+
+
+</script>
+
+<style>
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: relative;
+	}
+
+	button {
+		padding: 0.5em;
+		background-color: var(--background-400);
+		border-radius: 10px;
+		border: 2px var(--background-950);
+		color: var(--background-950);
+		font: inherit;
+	}
+
+	ul {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: absolute;
+		top: 2.5em;
+		padding: 0.5em;
+		background-color: var(--background-400);
+		color: var(--background-950);
+		border-radius: 10px;
+	}
+
+	ul.show {
+		display: flex;
+	}
+
+	li:hover {
+		background-color: var(--background-600);
+	}
+
+</style>
