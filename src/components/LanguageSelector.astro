@@ -1,23 +1,25 @@
 ---
-const LANGUAGES = [{
-	name: 'Español',
-	code: 'es'
-},
-{
-	name: 'English',
-	code: 'en'
-}]
+const LANGUAGES = [
+	{
+		name: 'English',
+		code: 'en'
+	},
+	{
+		name: 'Español',
+		code: 'es'
+	}
+]
 const { currentLocale } = Astro;
 ---
 
 <div>
-	<div>
+	<div class="dropdown">
 	  <button id="select-language"type="button">{currentLocale === 'en' ? 'English' : 'Español' }</button>
-	  <ul class="show" id="button-list" >
+	  <ul id="button-list" >
 		{
 			LANGUAGES.map(({name, code}) => {
 				return (
-					<li class={code}>
+					<li class={`${code} ${currentLocale === 'en' && code === 'en' ? 'selected' : currentLocale === 'es' && code === 'es' ? 'selected' : '' }`}>
 						<a href={code === 'es' ? `/${code}` : '/'}>{name}</a>
 					</li>
 				)
@@ -30,12 +32,10 @@ const { currentLocale } = Astro;
 <script>
 	const button = document.getElementById('select-language');
 	const list = document.getElementById('button-list');
+
 	button.addEventListener('click', () => {
 		list.classList.toggle('show');
 	})
-
-
-
 </script>
 
 <style>
@@ -47,13 +47,20 @@ const { currentLocale } = Astro;
 		position: relative;
 	}
 
+	.dropdown {
+		display: flex;
+		gap: 1em;
+	}
+
 	button {
 		padding: 0.5em;
 		background-color: var(--background-400);
 		border-radius: 10px;
-		border: 2px var(--background-950);
+		border: 3px var(--background-950) solid;
 		color: var(--background-950);
 		font: inherit;
+		width: 100%
+		
 	}
 
 	ul {
@@ -62,11 +69,23 @@ const { currentLocale } = Astro;
 		justify-content: center;
 		flex-direction: column;
 		position: absolute;
-		top: 2.5em;
-		padding: 0.5em;
-		background-color: var(--background-400);
+		top: 3em;
+		background-color: var(--background-300);
 		color: var(--background-950);
 		border-radius: 10px;
+		border: 3px var(--background-950) solid;
+		overflow: hidden;
+	}
+
+	li {
+		width: 100%;
+		text-align: center;
+		padding: 0.2em;
+	}
+	
+	.selected {
+		background-color: var(--background-500);
+		pointer-events: none;
 	}
 
 	ul.show {
@@ -74,7 +93,11 @@ const { currentLocale } = Astro;
 	}
 
 	li:hover {
-		background-color: var(--background-600);
+		background-color: var(--background-500);
+	}
+
+	@media (width <= 700px) {
+
 	}
 
 </style>
