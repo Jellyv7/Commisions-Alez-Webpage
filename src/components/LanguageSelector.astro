@@ -1,41 +1,59 @@
 ---
 const LANGUAGES = [
 	{
-		name: 'English',
-		code: 'en'
+		name: "English",
+		code: "en",
 	},
 	{
-		name: 'Español',
-		code: 'es'
-	}
-]
+		name: "Español",
+		code: "es",
+	},
+];
 const { currentLocale } = Astro;
 ---
 
 <div>
 	<div class="dropdown">
-	  <button id="select-language"type="button">{currentLocale === 'en' ? 'English' : 'Español' }</button>
-	  <ul id="button-list" >
-		{
-			LANGUAGES.map(({name, code}) => {
-				return (
-					<li class={`${code} ${currentLocale === 'en' && code === 'en' ? 'selected' : currentLocale === 'es' && code === 'es' ? 'selected' : '' }`}>
-						<a href={code === 'es' ? `/${code}` : '/'}>{name}</a>
-					</li>
-				)
-			})
-		}
-	  </ul>
+		<button id="select-language" class="selection" type="button"
+			>{currentLocale === "en" ? "English" : "Español"}</button
+		>
+		<ul id="button-list" class="button">
+			{
+				LANGUAGES.map(({ name, code }) => {
+					return (
+						<li
+							class={`${code} ${currentLocale === "en" && code === "en" ? "selected" : currentLocale === "es" && code === "es" ? "selected" : ""}`}
+						>
+							<a href={code === "es" ? `/${code}` : "/"}>
+								{name}
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
 	</div>
 </div>
 
 <script>
-	const button = document.getElementById('select-language');
-	const list = document.getElementById('button-list');
+	const button = document.getElementById("select-language");
+	const dropdown = document.querySelector(".dropdown");
+	const list = document.getElementById('button-list')
 
-	button.addEventListener('click', () => {
-		list.classList.toggle('show');
+	button.addEventListener("click", () => {
+		list.classList.toggle("show");
+	});
+
+	list.addEventListener('click', () => {
+		list.classList.toggle("show");
 	})
+
+	const handleDropdown = e => {
+		const currentElement = e.target;
+
+		if (!dropdown.contains(currentElement)) list.classList.remove("show");
+	};
+	document.addEventListener("click", handleDropdown);
 </script>
 
 <style>
@@ -59,8 +77,7 @@ const { currentLocale } = Astro;
 		border: 3px var(--background-950) solid;
 		color: var(--background-950);
 		font: inherit;
-		width: 100%
-		
+		width: 100%;
 	}
 
 	ul {
@@ -82,7 +99,7 @@ const { currentLocale } = Astro;
 		text-align: center;
 		padding: 0.2em;
 	}
-	
+
 	.selected {
 		background-color: var(--background-500);
 		pointer-events: none;
@@ -97,7 +114,19 @@ const { currentLocale } = Astro;
 	}
 
 	@media (width <= 700px) {
+		button {
+			font-size: 0.4rem;
+			border-radius: 7px;
+			border: 1px var(--background-950) solid;
+		}
 
+		ul {
+			top: 1.5em;
+			border: 1px var(--background-950) solid;
+		}
+
+		li {
+			font-size: 0.4rem;
+		}
 	}
-
 </style>
