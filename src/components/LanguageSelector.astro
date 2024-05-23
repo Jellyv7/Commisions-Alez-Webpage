@@ -38,20 +38,24 @@ const { currentLocale } = Astro;
 <script>
 	const button = document.getElementById("select-language");
 	const dropdown = document.querySelector(".dropdown");
-	const list = document.getElementById('button-list')
+	const list = document.getElementById('button-list');
+	const options = document.querySelectorAll('#button-list > li > a');
+	const optionList = [...options];
 
 	button.addEventListener("click", () => {
 		list.classList.toggle("show");
 	});
 
-	list.addEventListener('click', () => {
-		list.classList.toggle("show");
+	optionList.forEach(elem => {
+		elem.addEventListener('click', () => {
+			list.classList.toggle("show");
+		})
 	})
 
 	const handleDropdown = e => {
 		const currentElement = e.target;
 
-		if (!dropdown.contains(currentElement)) list.classList.remove("show");
+		if (!dropdown.contains(currentElement) && list.classList.contains('show')) list.classList.remove("show");
 	};
 	document.addEventListener("click", handleDropdown);
 </script>
