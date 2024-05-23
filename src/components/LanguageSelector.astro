@@ -1,4 +1,6 @@
 ---
+import { Language } from "@icons";
+
 const LANGUAGES = [
 	{
 		name: "English",
@@ -15,7 +17,7 @@ const { currentLocale } = Astro;
 <div>
 	<div class="dropdown">
 		<button id="select-language" class="selection" type="button"
-			>{currentLocale === "en" ? "English" : "Español"}</button
+			><Language /></button
 		>
 		<ul id="button-list" class="button">
 			{
@@ -75,13 +77,11 @@ const { currentLocale } = Astro;
 	}
 
 	button {
-		padding: 0.5em;
+		padding: 0.2em;
 		background-color: var(--background-400);
-		border-radius: 10px;
-		border: 3px var(--background-950) solid;
 		color: var(--background-950);
 		font: inherit;
-		width: 100%;
+		border: unset;
 	}
 
 	ul {
@@ -111,6 +111,7 @@ const { currentLocale } = Astro;
 
 	ul.show {
 		display: flex;
+		z-index: 1000;
 	}
 
 	li:hover {
@@ -119,14 +120,13 @@ const { currentLocale } = Astro;
 
 	@media (width <= 700px) {
 		button {
-			font-size: 0.4rem;
-			border-radius: 7px;
-			border: 1px var(--background-950) solid;
+			padding: unset;
 		}
 
 		ul {
 			top: 1.5em;
 			border: 1px var(--background-950) solid;
+			border-radius: 6px;
 		}
 
 		li {

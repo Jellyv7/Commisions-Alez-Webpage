@@ -1,5 +1,6 @@
 ---
 import {Home, Commisions, Portfolio, Terms} from '@icons';
+import LanguageSelector from './LanguageSelector.astro';
 import { getI18N } from "../../i18n/index";
 const { currentLocale = 'en' } = Astro;
 const i18n = getI18N(currentLocale);
@@ -38,6 +39,9 @@ const i18n = getI18N(currentLocale);
 				</span>
 				<Terms />
 			</a>
+		</li>
+		<li>
+			<LanguageSelector />
 		</li>
 	</ul>
 </nav>
