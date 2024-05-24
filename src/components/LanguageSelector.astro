@@ -16,15 +16,15 @@ const { currentLocale } = Astro;
 
 <div>
 	<div class="dropdown">
-		<button id="select-language" class="selection" type="button"
-			><Language /></button
-		>
+		<button id="select-language" class="selection" type="button">
+			<Language />
+		</button>
 		<ul id="button-list" class="button">
 			{
 				LANGUAGES.map(({ name, code }) => {
 					return (
 						<li
-							class={`${code} ${currentLocale === "en" && code === "en" ? "selected" : currentLocale === "es" && code === "es" ? "selected" : ""}`}
+							class={`${code} ${currentLocale === "en" && code === "en" || currentLocale === "es" && code === "es" ? "selected" : "" }`}
 						>
 							<a href={code === "es" ? `/${code}` : "/"}>
 								{name}
